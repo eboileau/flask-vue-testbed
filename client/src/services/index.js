@@ -13,8 +13,14 @@ export default {
   getConcurrent(endpoints) {
     return Promise.all(endpoints.map((endpoint) => HTTP.get(endpoint)))
   },
+  get(endpoint, config) {
+    return HTTP.get(endpoint, config)
+  },
   getEndpoint(endpoint) {
     return HTTP.get(endpoint)
+  },
+  getEndpointParam(endpoint, param) {
+    return HTTP.get(endpoint, {params: {...param}})
   },
   postEndpoint(endpoint, payload) {
     return HTTP.post(endpoint, payload)

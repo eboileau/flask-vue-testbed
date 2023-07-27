@@ -137,6 +137,7 @@ So far, no big problem, but we use custom query handling. We probably need a bet
 
 **Note:** The `@dataclass` decorator doesn't work directly on `Reflected` classes, I think we might have to define them explicitely...
 
+Check out [How to serialize SqlAlchemy result to JSON?](https://stackoverflow.com/questions/5022066/how-to-serialize-sqlalchemy-result-to-json)
 
 #### CORS
 
@@ -178,13 +179,11 @@ session = Session(engine)
 
 #### API calls - Axios
 
-So far, we don't have a true lazy loading implemented... 
-
+Lazy loading with custom pagination using `limit` and `offset`.
 
 #### Router
 
 Check https://router.vuejs.org/guide/advanced/data-fetching.html
-
 
 ### MySQL
 
@@ -213,7 +212,7 @@ Do we need it? With MariaDB that might be more difficult.
 
 #### TreeSelect
 
-Tree construction is arbitrary, here we used customerName > orderNumber > productName, but this results in non-unique choices in the tree, *e.g.* same productName for different orderNumber. The PrimeVue `TreeSelect` component selects ALL of them when one is selected. In summary, we need to make sure the data model is consistent and normalized (-> about RNA modification - *e.g.* m6A mRNA and m6A rRNA, or organism *e.g.* H. Sapiens Heart and M. Musculus Heart, *etc.*)!
+Tree construction is arbitrary, here we used customerName > orderNumber > productName, but this results in non-unique choices in the tree, *e.g.* same productName for different orderNumber (*i.e.* if selecting a given product under a certain order, all orders containing this product are actually displayed). In our true application, this should not occur! The PrimeVue `TreeSelect` component selects ALL of them when one is selected. In summary, we need to make sure the data model is consistent and normalized (-> about RNA modification - *e.g.* m6A mRNA and m6A rRNA, or organism *e.g.* H. Sapiens Heart and M. Musculus Heart, *etc.*)!
 
 
 

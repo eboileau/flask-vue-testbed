@@ -2,7 +2,6 @@
 import NavigationBar from '@/components/layout/NavigationBar.vue'
 import SimpleDropdown from '@/components/components/SimpleDropdown.vue'
 import DependentSelect from '@/components/components/DependentSelect.vue'
-import DependentSelect2 from '@/components/components/DependentSelect2.vue'
 </script>
 
 <template>
@@ -15,10 +14,7 @@ import DependentSelect2 from '@/components/components/DependentSelect2.vue'
       <SimpleDropdown />
     </div>
     <div>
-      <!-- <DependentSelect /> -->
-    </div>
-    <div>
-      <DependentSelect2 />
+      <DependentSelect />
     </div>
   </div>
 </template>
